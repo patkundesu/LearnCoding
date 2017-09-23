@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="UserHomeScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="800" Height="560" HorizontalAlignment="Center" VerticalAlignment="Top">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Themes\Generic.xaml"/>
+                <ResourceDictionary Source="..\Themes\CustomButtons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label HorizontalAlignment="Center" Margin="0,0,0,75" VerticalAlignment="Center" FontSize="36">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Welcome, "/><InlineUIContainer>
+            		<TextBlock x:Name="txtb_user" TextWrapping="Wrap" Text="&lt;insert username&gt;"/>
+            	</InlineUIContainer><Run Text="!"/></TextBlock>
+        </Label>
+        <Button x:Name="btn_lesson" Style="{StaticResource ResourceKey=LCButton}" Content="Start" HorizontalAlignment="Center" Height="60" Margin="0,50,0,0" VerticalAlignment="Top" Width="178" FontSize="36" Grid.Row="1" />
+        <Button x:Name="btn_signout" Style="{StaticResource ResourceKey=CancelButton}" Content="Sign Out" HorizontalAlignment="Center" Height="60" Margin="0,120,0,0" VerticalAlignment="Top" Width="178" FontSize="30" Grid.Row="1" />
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="50" Margin="0,75,0,0" VerticalAlignment="Center" Width="500">
+            <Border.Background>
+                <SolidColorBrush Color="#FF9B9B9B" Opacity="0.5"/>
+            </Border.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" x:Name="img_unit" HorizontalAlignment="Left" Margin="5,5,0,5" Source="/Learn Coding;component/Resources/LC_Fundamentals.png" Cursor="Hand"/>
+                <Label Grid.Column="1" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top">
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"><InlineUIContainer>
+                            <TextBlock x:Name="txtb_unitno" TextWrapping="Wrap" Text="Java"/>
+                        </InlineUIContainer><Run Text=" "/><Run Text=" &gt; "/><Run Text=" "/><InlineUIContainer>
+                            <TextBlock x:Name="txtb_lessonno" TextWrapping="Wrap" Text="Lesson 7"/>
+                        </InlineUIContainer><Run Text=" "/><Run Text=" &gt; "/><Run Text=" "/><InlineUIContainer>
+                            <TextBlock x:Name="txtb_pageno" TextWrapping="Wrap" Text="Page 11"/>
+                        </InlineUIContainer></TextBlock>
+                </Label>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

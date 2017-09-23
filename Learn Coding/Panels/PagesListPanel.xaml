@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="PagesListPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+           Width="300" Height="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Themes\Generic.xaml"/>
+                <ResourceDictionary Source="..\Themes\CustomButtons.xaml"/>
+                <ResourceDictionary>
+                    <Style TargetType="{x:Type Button}" x:Key="OpenPanelButton">
+                        <Setter Property="Background" Value="#FF8ACAFF"/>
+                        <Setter Property="BorderBrush" Value="{x:Null}"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            Background="{TemplateBinding Background}"
+                                            Cursor="Hand"
+                                            CornerRadius="2">
+                                        <Border.Effect>
+                                            <DropShadowEffect Opacity="0.5"/>
+                                        </Border.Effect>
+                                        <ContentPresenter Margin="5,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border x:Name="brd_main" BorderThickness="0">
+        <Border x:Name="brd_sub" Style="{StaticResource LCPanelBorder}" Margin="0,0,-1,0" HorizontalAlignment="Left" Width="280">
+            <Grid Margin="0">
+                <Label Content="Select Lesson" HorizontalAlignment="Left" Margin="50,30,0,0" VerticalAlignment="Top"/>
+                <Border CornerRadius="9" Background="AliceBlue" HorizontalAlignment="Left" Margin="40,60,0,0" VerticalAlignment="Top">
+                    <ListBox x:Name="lst_lessons" Background="{x:Null}"  Height="300"  Width="205" BorderBrush="{x:Null}" Padding="10,0,0,0">
+
+                    </ListBox>
+                </Border>
+                <Button x:Name="btn_showpanel" Style="{StaticResource ResourceKey=OpenPanelButton}" Content="&gt;" HorizontalAlignment="Right" Height="74" Margin="0,162,-20,162" VerticalAlignment="Center" Width="25" Padding="5,1,1,1" ToolTip="Lessons List"/>
+            </Grid>
+        </Border>
+    </Border>
+</UserControl>

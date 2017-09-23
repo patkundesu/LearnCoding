@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="MultipleChoicePanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:Microsoft.Windows.Controls;assembly=U2UConsult.RichHtmlTextBlock" 
+                  mc:Ignorable="d" d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\..\Themes\Generic.xaml"/>
+                <ResourceDictionary Source="..\..\Themes\CustomButtons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border x:Name="MultipleChoices" BorderBrush="Black" BorderThickness="1" Margin="0" Width="400" CornerRadius="15" Background="#FF8ACAFF">
+        <Grid x:Name="grid_choices">
+            <TextBlock x:Name="txtb_number" HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"><Run Text="1."/></TextBlock>
+            <Controls:RichTextBox 
+        		x:Name="txtb_question"
+        		Background="Transparent" VerticalAlignment="Top"
+        		Cursor="Arrow" BorderBrush="Transparent" BorderThickness="0" VerticalContentAlignment="Center" Margin="30,20,10,0" Height="50">
+                <FlowDocument/>
+            </Controls:RichTextBox>
+        </Grid>
+    </Border>
+</UserControl>

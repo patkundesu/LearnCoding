@@ -1,0 +1,81 @@
+﻿<UserControl
+             xmlns:LCLib="clr-namespace:LCLib.CustomControls;assembly=LCLib" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Learn_Coding" x:Class="LessonMainScreen" 
+             mc:Ignorable="d" 
+         d:DesignHeight="300" d:DesignWidth="300" Width="800" Height="600">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Themes\Generic.xaml"/>
+                <ResourceDictionary Source="..\Themes\CustomButtons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="83*" />
+            <RowDefinition Height="17*" />
+        </Grid.RowDefinitions>
+        <LCLib:LessonNextButton x:Name="next_button" Content="next_button" HorizontalAlignment="Right" Margin="0,0,50,0" VerticalAlignment="Center" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Height="82" >
+            <LCLib:LessonNextButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </LCLib:LessonNextButton.RenderTransform>
+        </LCLib:LessonNextButton>
+        <LCLib:LessonPreviousButton x:Name="previous_button" Content="prev_button" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Center" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Width="150" Height="82" >
+            <LCLib:LessonPreviousButton.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.75" ScaleY="0.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </LCLib:LessonPreviousButton.RenderTransform>
+        </LCLib:LessonPreviousButton>
+        <local:TextScreen x:Name="LTextScreen" Margin="0" Width="Auto" Height="Auto" IsEnabled="False" Visibility="Hidden"/>
+        <local:ImageScreen x:Name="LImageScreen" Margin="0" Width="Auto" Height="Auto" Visibility="Hidden" IsEnabled="False"/>
+        <local:ImageScrollScreen x:Name="LImageScrollScreen" Margin="0" Width="Auto" Height="Auto" IsEnabled="False" Visibility="Hidden"/>
+        <local:CodeScreen x:Name="LCodeScreen" Margin="0" Width="Auto" Height="Auto" IsEnabled="False" Visibility="Hidden"/>
+        <local:VideoScreen x:Name="LVideoScreen" Margin="0" Width="Auto" Height="Auto" IsEnabled="False" Visibility="Hidden"/>
+
+        <Label x:Name="lbl_unitlesson" Margin="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock TextWrapping="Wrap"><InlineUIContainer>
+					<TextBlock x:Name="txtb_unit" Text="Fundamentals" />
+				</InlineUIContainer><Run Text="  |  "/><InlineUIContainer>
+					<TextBlock>
+                        <InlineUIContainer>
+                            <TextBlock x:Name="txtb_lesson" Text="Lesson 1" />
+                        </InlineUIContainer>
+                        <Run Text=": " />
+                        <InlineUIContainer>
+                            <TextBlock x:Name="txtb_lessontopic" Text="Introduction" />
+                        </InlineUIContainer>
+                    </TextBlock>
+				</InlineUIContainer></TextBlock>
+        </Label>
+        <Label x:Name="lbl_current" HorizontalAlignment="Center" Height="59" Margin="0" VerticalAlignment="Center" Width="190" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="30" Grid.Row="1">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"><InlineUIContainer>
+					<TextBlock x:Name="txtb_currentpage" TextWrapping="Wrap" Text="0"/>
+				</InlineUIContainer><Run Text=" "/><Run Text=" | "/><Run Text=" "/><InlineUIContainer>
+					<TextBlock x:Name="txtb_totalpage" TextWrapping="Wrap" Text="0"/>
+				</InlineUIContainer></TextBlock>
+        </Label>
+        <Button x:Name="proceed_button" Style="{StaticResource ResourceKey=LCButton}" Content="Proceed" HorizontalAlignment="Right" Margin="0,0,28,0" VerticalAlignment="Center" FontSize="48" Width="224" Visibility="Hidden" IsEnabled="False" Grid.Row="1"/>
+
+        <Border x:Name="brd_darken" BorderBrush="Black" BorderThickness="1" Margin="0" Visibility="Hidden" Grid.RowSpan="2">
+            <Border.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5"/>
+            </Border.Background>
+        </Border>
+        <local:PagesListPanel x:Name="PagesListPanel" HorizontalAlignment="Left" Margin="-280,0,0,0" VerticalAlignment="Center" Grid.RowSpan="2"/>
+        <local:ProgrammingLanguagePanel x:Name="PL_Panel" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Center" IsEnabled="False" Visibility="Hidden"/>
+    </Grid>
+</UserControl>

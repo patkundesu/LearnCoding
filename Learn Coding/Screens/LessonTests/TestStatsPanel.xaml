@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="TestStatsPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+              d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\..\Themes\Generic.xaml"/>
+                <ResourceDictionary Source="..\..\Themes\CustomButtons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border x:Name="Score" BorderBrush="Black" BorderThickness="1" Margin="0" CornerRadius="15" Background="#FF8ACAFF">
+        <Grid x:Name="grid_score">
+            <Label x:Name="lbl_lesson" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Top">
+                <Grid>
+                    <TextBlock x:Name="txtb_unit" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"><Run Text=""/></TextBlock>
+                </Grid>
+            </Label>
+            <Label x:Name="lbl_score" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top">
+                <Grid>
+                    <TextBlock x:Name="txtb_score" TextWrapping="Wrap" Text="##" TextDecorations="Underline" Margin="60,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBlock x:Name="txtb_items" HorizontalAlignment="Left" Margin="60,22,0,0" TextWrapping="Wrap" Text="##" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Margin="0" FontSize="20" Text="Score:"/>
+                </Grid>
+            </Label>
+            <Label x:Name="lbl_percent" HorizontalAlignment="Left" Margin="20,75,0,0" VerticalAlignment="Top" FontSize="20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="22*"/>
+                        <ColumnDefinition Width="137*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"><Run Text="Percentage: "/><InlineUIContainer>
+    						<TextBlock x:Name="txtb_percentage" HorizontalAlignment="Left" TextWrapping="Wrap" Text="100%" VerticalAlignment="Top"/>
+    					</InlineUIContainer></TextBlock>
+                </Grid>
+            </Label>
+            <Button x:Name="btn_proceed" Style="{StaticResource LCButton}"  Content="Proceed To Next Lesson" HorizontalAlignment="Right" Margin="0,0,38,10" VerticalAlignment="Bottom" Width="141" Height="28"/>
+        </Grid>
+    </Border>
+</UserControl>
