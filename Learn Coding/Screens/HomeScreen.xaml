@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="HomeScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="568" d:DesignWidth="800" Width="Auto" Height="Auto">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/CustomButtons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Image x:Name="java_logo" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Bottom" Source="/Learn Coding;component/Resources/java_logo.png" Height="64" Width="64"/>
+        <Image x:Name="cpp_logo" HorizontalAlignment="Left" Margin="64,0,0,11" VerticalAlignment="Bottom" Source="/Learn Coding;component/Resources/cpp_logo.png" Height="43" Width="65"/>
+        <Image x:Name="html_logo" HorizontalAlignment="Left" Margin="132,0,0,6" VerticalAlignment="Bottom" Source="/Learn Coding;component/Resources/html_logo.png" Height="65" Width="64"/>
+        <Image x:Name="javascript_logo" HorizontalAlignment="Left" Margin="206,0,0,6" VerticalAlignment="Bottom" Source="/Learn Coding;component/Resources/javascript_logo.png" Height="65" Width="64"/>
+        <Image x:Name="php_logo" HorizontalAlignment="Left" Margin="273,0,0,11" VerticalAlignment="Bottom" Source="/Learn Coding;component/Resources/php_logo.png" Height="39" Width="65"/>
+        <Label x:Name="lbl_lc" HorizontalAlignment="Center" Margin="0,125,0,0" VerticalAlignment="Top" FontSize="48" FontFamily="Courier New" Width="374">
+            <Grid>
+                <TextBlock TextWrapping="Wrap" Text="Learn Coding"/>
+                <Image x:Name="lc_logo" HorizontalAlignment="Center" Margin="-78,-34,332,0" VerticalAlignment="Top" Source="/Learn Coding;component/Resources/logo new lc.png" Height="107" Width="110"/>
+            </Grid>
+        </Label>
+        <Button x:Name="btn_sign" Content="Sign-in" Style="{StaticResource LCButton}" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="150" Height="36" FontSize="20"/>
+    </Grid>
+</UserControl>

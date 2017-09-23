@@ -1,0 +1,40 @@
+﻿/*This code is provided by*/
+/*Hoshizora Computers*/
+body{
+    font-family:'Segoe UI';
+	font-size:15px;
+}
+h1 #unit{
+	color:#55F;
+	text-align:center;
+}
+p #unit_intro{
+	font-size:20px;
+}
+ul #unit_learn{
+	font-size:18px;
+}
+h1 #lesson{
+	color:#66F;
+}
+h3{
+	font-style:italic;
+}
+p{
+	text-align:justify;
+}
+p #img{
+	text-align:left;
+}
+p #vid{
+	font-size:13px;
+}
+.centered{
+	text-align:center;
+}
+code{
+	font-family:Courier New;
+}
+table{
+	border:dotted;
+}

@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="ProgramSettingsPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+            mc:Ignorable="d" Width="400" Height="181">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Themes\Generic.xaml"/>
+                <ResourceDictionary Source="..\Themes\CustomButtons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border Style="{StaticResource ResourceKey=LCPanelBorder}">
+        <Grid>
+            <Label Content="Aspect Ratio" HorizontalAlignment="Left" Margin="35,50,0,0" VerticalAlignment="Top" Height="25" Width="80"/>
+            <ComboBox x:Name="cmb_ratio" HorizontalAlignment="Left" Margin="110,50,0,0" VerticalAlignment="Top" Width="200" Height="25">
+                <ListBoxItem Content="4:3"/>
+                <ListBoxItem Content="5:4"/>
+                <ListBoxItem Content="Netbook"/>
+                <ListBoxItem Content="LCD"/>
+            </ComboBox>
+            <Button x:Name="btn_apply" Content="Apply" HorizontalAlignment="Left" Margin="156,126,0,0" VerticalAlignment="Top" Width="74"/>
+            <Button x:Name="btn_close" Content="Close" HorizontalAlignment="Left" Margin="235,126,0,0" VerticalAlignment="Top" Width="75"/>
+            <TextBox x:Name="txt_transspeed" HorizontalAlignment="Left" Height="22" Margin="164,90,0,0" TextWrapping="Wrap" Text="500" VerticalAlignment="Top" Width="66"/>
+            <Label Content="Transition Speed (ms)" HorizontalAlignment="Left" Margin="35,88,0,0" VerticalAlignment="Top"/>
+        </Grid>
+
+    </Border>
+</UserControl>

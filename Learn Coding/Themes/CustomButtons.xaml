@@ -1,0 +1,185 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style x:Key="LCButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="PaleGreen"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            Cursor="Hand"
+                            CornerRadius="2">
+                        <Border.Effect>
+                            <DropShadowEffect Opacity="0.5"/>
+                        </Border.Effect>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFC5FFC5"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="DarkSeaGreen"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="CancelButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Silver"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="Black"
+                            BorderThickness="1"
+                            Cursor="Hand">
+                        <Border.Effect>
+                            <DropShadowEffect Opacity="0.5"/>
+                        </Border.Effect>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFDEDEDE"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#FF999999"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="UserButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="1"
+                            Cursor="Hand"
+                            Padding="5,0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#554455"/>
+                <Setter Property="BorderBrush" Value="#FFDEDEDE"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#FF999999"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="Transparent"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="CloseButton" TargetType="{x:Type Button}">
+        <Setter Property="Image.Source" Value="../Resources/close_n.png"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                             Cursor="Hand">
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Image Stretch="UniformToFill" Width="30" HorizontalAlignment="Left" VerticalAlignment="Stretch" Source="{TemplateBinding Image.Source}"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Image.Source" Value="../Resources/close_h.png"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value=" True">
+                <Setter Property="Image.Source" Value="../Resources/close_c.png"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="MinimizeButton" TargetType="{x:Type Button}">
+        <Setter Property="Image.Source" Value="../Resources/minimize_n.png"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                             Cursor="Hand">
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Image Stretch="UniformToFill" Width="30" HorizontalAlignment="Left" VerticalAlignment="Stretch" Source="{TemplateBinding Image.Source}"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Image.Source" Value="../Resources/minimize_h.png"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value=" True">
+                <Setter Property="Image.Source" Value="../Resources/minimize_n.png"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="FullScreenSwitch" TargetType="{x:Type CheckBox}">
+        <Setter Property="Image.Source" Value="../Resources/full-screen_n.png"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Border HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                             Cursor="Hand">
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Image Stretch="UniformToFill" Width="30" HorizontalAlignment="Left" VerticalAlignment="Stretch" Source="{TemplateBinding Image.Source}"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Image.Source" Value="../Resources/full-screen_h.png"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="SettingsButton" TargetType="{x:Type CheckBox}">
+        <Setter Property="Image.Source" Value="../Resources/settings_n.png"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Border HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                             Cursor="Hand">
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Image Stretch="UniformToFill" Width="30" HorizontalAlignment="Left" VerticalAlignment="Stretch" Source="{TemplateBinding Image.Source}"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Image.Source" Value="../Resources/settings_h.png"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
